@@ -19,7 +19,7 @@ class APIMethod:
         self._base_url = base_url
         self._logger = logger
 
-    def _send_request(self, method, *endpoint, headers=None, payload=None, params=None):
+    def _send_request(self, method, *endpoint, headers: dict = None, payload: dict = None, params: dict = None):
         url = self._generate_url(self._base_url, endpoint, params)
         self._logger.info(f"Request Method: {method.__name__}")
         self._logger.info(f"URL: {url}")
