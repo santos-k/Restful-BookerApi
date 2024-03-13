@@ -24,7 +24,7 @@ class APIMethod:
         self._logger.info(f"Request Method: {method.__name__}")
         self._logger.info(f"URL: {url}")
         try:
-            response = method(url=url, headers=headers, json=payload, verify=False)
+            response = method(url=url, headers=headers, data=payload)
             self._logger.info(f"Response Status: {response.status_code}")
             self._logger.info(f"Response Body: {response.text}")
             return response
